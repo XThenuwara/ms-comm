@@ -4,8 +4,6 @@ import { UsersController } from './users.controller';
 import { ClientsModule, Transport } from '@nestjs/microservices';
 import * as common from 'common/dist';
 
-console.log("common output", common);
-
 @Module({
   imports: [
     ClientsModule.register([
@@ -15,6 +13,7 @@ console.log("common output", common);
         options: {
           package: 'users',
           protoPath: common.protos.usersProtoPath,
+          url: 'localhost:5000',
         },
       },
     ]),

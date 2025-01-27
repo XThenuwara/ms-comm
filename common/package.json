@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc --build && copyfiles -u 1 './**/*.proto' dist/protos"
+    "proto:gen": "grpc_tools_node_protoc --plugin=./node_modules/.bin/protoc-gen-ts_proto --ts_proto_opt=esModuleInterop=true --ts_proto_out=./ protos/*.proto",
+    "build": "npm run proto:gen && tsc --build && copyfiles -u 1 './**/*.proto' dist/protos"
   },
   "keywords": [],
   "author": "",
@@ -13,8 +14,15 @@
   "devDependencies": {
     "@types/node": "^22.10.10",
     "copyfiles": "^2.4.1",
+    "grpc-tools": "^1.12.4",
     "ts-node": "^10.9.2",
+    "ts-proto": "^2.6.1",
     "typescript": "^5.7.3"
   },
-  "type": "commonjs"
+  "type": "commonjs",
+  "dependencies": {
+    "rx": "^4.1.0",
+    "rxjs": "^7.8.1",
+    "ts-protoc-gen": "^0.15.0"
+  }
 }

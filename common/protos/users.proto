@@ -4,6 +4,8 @@ package users;
 
 service UsersService {
   rpc FindOne (UserById) returns (User) {}
+  rpc FindAll (Empty) returns (UserList) {}
+  rpc StreamAll (Empty) returns (stream User) {}
 }
 
 message UserById {
@@ -13,4 +15,10 @@ message UserById {
 message User {
   int32 id = 1;
   string name = 2;
+}
+
+message Empty {}
+
+message UserList {
+  repeated User data = 1;
 }

@@ -20,9 +20,13 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "@grpc/grpc-js": "^1.12.5",
     "@nestjs/common": "^11.0.1",
     "@nestjs/core": "^11.0.1",
+    "@nestjs/mapped-types": "*",
+    "@nestjs/microservices": "^11.0.6",
     "@nestjs/platform-express": "^11.0.1",
+    "common": "file:../common",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1"
   },
