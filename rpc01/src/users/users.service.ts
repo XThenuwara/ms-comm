@@ -15,6 +15,7 @@ export class UsersService {
 
   getHero() {
    // return this.usersService.findOne(1);
+   
   }
   
 }

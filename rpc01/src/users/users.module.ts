@@ -2,8 +2,9 @@ import { Module } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { UsersController } from './users.controller';
 import { ClientsModule, Transport } from '@nestjs/microservices';
-import * as common from 'common';
+import * as common from 'common/dist';
 
+console.log("common output", common);
 
 @Module({
   imports: [
